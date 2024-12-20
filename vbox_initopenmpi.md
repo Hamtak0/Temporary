@@ -75,6 +75,8 @@
             return 0;
         }
         ```
+        - The gethostname part can be replace with `MPI_Get_processor_name(processor_name, &name_len);`  
+            where `char processor_name[MPI_MAX_PROCESSOR_NAME]; int name_len;`
     - `mpicc hello.c -o hello.out`
     - `mpirun -np 4 -host {IP_Server/Hostname}:2,{IP_Client/Hostname}:2 ./compute.out`
         > mpirun -np 4 -host hpcncserver:2,hpcncclient:2 ./compute.out
@@ -100,3 +102,4 @@
 - [Install openMPI for ubuntu](https://medium.com/@ayshenesirli5/installing-open-mpi-for-ubuntu-31328b01f20b)
 - [Using MPI with C](https://curc.readthedocs.io/en/latest/programming/MPI-C.html)
 - [Using the SSH config file](https://linuxize.com/post/using-the-ssh-config-file/)
+- [MPI Hello World](https://mpitutorial.com/tutorials/mpi-hello-world/)
